@@ -1,0 +1,4 @@
+- Option to add other languages to a certain search engine
+- Option to increase number of search results
+- Better results UI
+- Potential VPN option

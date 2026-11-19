@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f9">
+  <title>World Wide Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark"><i></i><i></i><i></i></span>worldwide<span class="brand-light">search</span></a><span class="top-note"><span class="live-dot"></span> MULTILINGUAL DISCOVERY</span></header>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="eyebrow"><span class="spark">✳</span> SEARCH BEYOND BORDERS</div>
+      <h1>Good ideas don’t<br><span>stop at one language.</span></h1>
+      <p class="intro">Search the web in English and Russian at once.<br>See what you might have missed.</p>
+      <form id="search-form" class="search-form">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input id="query" name="query" type="search" placeholder="Try “best logic analyzers”" autocomplete="off" maxlength="300" required aria-label="Search topic">
+        <button id="search-button" type="submit"><span>Search</span><span aria-hidden="true">↗</span></button>
+      </form>
+      <fieldset class="engine-picker"><legend>SEARCH WITH</legend><label class="engine-option"><input type="checkbox" name="engine" value="google" checked><span class="engine-pill"><b class="g-mark">G</b> Google</span></label><label class="engine-option"><input type="checkbox" name="engine" value="yandex" checked><span class="engine-pill"><b class="y-mark">Я</b> Yandex</span></label><label class="engine-option"><input type="checkbox" name="engine" value="baidu" checked><span class="engine-pill"><b class="b-mark">百</b> Baidu</span></label><span class="query-hint">Russian and Chinese queries are translated automatically</span></fieldset>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <div class="quick-searches"><span>GET STARTED</span><button type="button" data-query="best logic analyzers">best logic analyzers</button><button type="button" data-query="open source climate models">open source climate models</button><button type="button" data-query="battery recycling technology">battery recycling technology</button></div>
+    </section>
+    <section id="results" class="results" hidden aria-label="Search results">
+      <div class="results-heading"><div><div class="eyebrow"><span class="spark">✳</span> YOUR SEARCH, EXPANDED</div><h2>What the web has to say</h2></div><button id="new-search" class="text-button" type="button">↑ New search</button></div>
+      <div class="summary-card"><div class="summary-icon">✳</div><div class="summary-content"><div class="card-label">SEARCH OVERVIEW <span id="result-count"></span></div><p id="summary"></p><div class="summary-foot">Based on search result snippets · Open sources to verify details</div></div></div>
+      <div class="translation-line"><span class="translation-icon">文</span><div><span class="card-label">YOUR QUERY IN RUSSIAN</span><div id="translated-query" class="translated"></div></div><span class="translation-arrow">↗</span></div>
+      <div class="result-columns">
+        <section class="result-group"><div class="group-heading"><div class="engine-title"><b class="g-mark">G</b><h3>Google</h3></div><span id="google-count" class="result-count"></span></div><div id="google-results" class="result-list"></div></section>
+        <section class="result-group"><div class="group-heading"><div class="engine-title"><b class="y-mark">Я</b><h3>Yandex</h3></div><div class="yandex-actions"><button id="translate-yandex" class="translate-button" type="button" hidden>Translate to English</button><span id="yandex-count" class="result-count"></span></div></div><div id="yandex-results" class="result-list"></div></section>
+        <section class="result-group"><div class="group-heading"><div class="engine-title"><b class="b-mark">百</b><h3>Baidu</h3></div><div class="yandex-actions"><button id="translate-baidu" class="translate-button" type="button" hidden>Translate to English</button><span id="baidu-count" class="result-count"></span></div></div><div class="baidu-query">Search in Chinese: <span id="translated-query-chinese"></span></div><div id="baidu-results" class="result-list"></div></section>
+      </div>
+      <p class="source-note">Results are provided by Google and Yandex via SerpApi. Summaries use the text shown in search snippets.</p>
+    </section>
+    <footer><span>WORLD WIDE SEARCH</span><span>Find the idea. Follow it everywhere.</span></footer>
+  </main>
+</body>
+</html>
